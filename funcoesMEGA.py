@@ -104,19 +104,3 @@ def Put_diretorio(diretorio, dir_remoto):
   except Exception as e:
     raise e
   
-    
-
-  
-  
-  
-# TESTES
-# Put_diretorio('/home/mardio/script', 'mardioimportados')
-# if __name__ == '__main__':
-#   usuario='mardioimportados@gmail.com'
-#   senha='TWSBAtwsba@1978'
-
-#   Login(usuario, senha)
-# ver=Verificar_Logado()
-# print(ver)
-# t=informacoes()
-# print(t)

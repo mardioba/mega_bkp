@@ -7,8 +7,8 @@ import os
 from tktooltip import ToolTip
 import time
 from PIL import Image, ImageTk
-
-
+import secreto
+print(secreto.email,secreto.senha)
 class TELA():
     def __init__(self):
         super().__init__()
@@ -101,7 +101,7 @@ class TELA():
                 pasta=pasta[-1]
                 dir_remoto=os.path.join(base_nome, pasta)
                 print("pasta:",dir_remoto)
-                Login("mardioimportados@gmail.com", "TWSBAtwsba@1978")
+                Login(secreto.email, secreto.senha)
                 Put_diretorio(diretorio_filtrado, dir_remoto)
                 # messagebox.showinfo("Backup concluído", "Backup concluído com sucesso!")
                 self.lbl_aviso = tk.Label(self.janela, text=f"{diretorio_filtrado} enviado para nuvem com sucesso!!", fg="green",justify="center", background="#FFD700", font=("Arial", 10, "bold"))
