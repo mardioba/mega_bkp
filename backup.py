@@ -94,6 +94,7 @@ class TELA():
         data = datetime.now().strftime("%d-%m-%Y_%H-%M-%S")
         base_nome = f"Backup_{data}"
         if (self.Validar_tree()):
+            Login(secreto.email, secreto.senha)
             for item in self.tree.get_children():
                 diretorio=self.tree.item(item)['values']
                 diretorio_filtrado=diretorio[0]
@@ -101,7 +102,6 @@ class TELA():
                 pasta=pasta[-1]
                 dir_remoto=os.path.join(base_nome, pasta)
                 print("pasta:",dir_remoto)
-                Login(secreto.email, secreto.senha)
                 Put_diretorio(diretorio_filtrado, dir_remoto)
                 # messagebox.showinfo("Backup concluído", "Backup concluído com sucesso!")
                 self.lbl_aviso = tk.Label(self.janela, text=f"{diretorio_filtrado} enviado para nuvem com sucesso!!", fg="green",justify="center", background="#FFD700", font=("Arial", 10, "bold"))
